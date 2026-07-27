@@ -1,7 +1,6 @@
-<!doctype html>
-<html lang="en">
+<html>
   <head>
-    <title>Hey, Callie!</title>
+    <title>Nighttime</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="assets/la_lua.png" />
 
@@ -18,7 +17,7 @@
 
       h1 {
         margin: 0px;
-        font-size: 66px;
+        font-size: 50px;
         font-style: italic;
       }
 
@@ -41,35 +40,9 @@
         margin-top: 10px;
         padding-left: 10px;
       }
-
-      a {
-        color: #caae88;
-        font-size: 24px;
-      }
-
-      a:hover {
-        color: #54504a;
-      }
-
-      a.left {
-        text-align: left;
-      }
-
-      .hidden {
-        display: none;
-      }
-
-      #lightbulb {
-        /* Smoothly transition the transform property over 0.5 seconds with easing */
-        transition: transform 0.2s ease-in-out;
-      }
-
-      #lightbulb:hover {
-        transform: translateY(30px);
-      }
     </style>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("DOMContentLoaded", (event) => {
         if (localStorage.getItem("msLastTime")) {
           document.getElementById("welcome").innerHTML = "welcome back.";
           theTimeSince =
@@ -101,7 +74,7 @@
             theTimeSince = Math.round(theTimeSince) + " seconds";
           }
           document.getElementById("timeSince").innerHTML =
-            "Last visited " + theTimeSince + " ago.";
+            theTimeSince + " ago.";
         } else {
           document.getElementById("lastVisited").classList.add("hidden");
         }
@@ -121,24 +94,17 @@
         var n = d.toLocaleTimeString();
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, "0");
-        var mm = String(today.getMonth() + 1).padStart(2, "0"); // january is 0
+        var mm = String(today.getMonth() + 1).padStart(2, "0"); // January is 0!
         var yyyy = today.getFullYear();
 
         var today = mm + "/" + dd + "/" + yyyy;
-        document.getElementById("timeNow").innerHTML = n;
-        document.getElementById("dateNow").innerHTML = today;
+        document.getElementById("timeNow").innerHTML =
+          today + "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp " + n;
       }
     </script>
   </head>
 
-  <body id="main">
-    <img
-      src="assets/brightbulb.png"
-      style="position: fixed; top: -100px; right: 218px; cursor: pointer"
-      id="lightbulb"
-      onclick="setTheme(true)"
-      title="Turn on the lights?"
-    />
+  <body>
     <span
       style="
         position: fixed;
@@ -148,7 +114,7 @@
         font-size: 20px;
         font-family: Cascadia Mono;
       "
-      >/index.html</span
+      >/nighttime.html</span
     >
     <div
       style="
@@ -158,52 +124,80 @@
         min-height: 100vh;
       "
     >
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          gap: 0px;
-          flex-direction: column;
-        "
-      >
-        <h1>
-          <span id="welcome">welcome.</span>
-        </h1>
+      <div style="display: flex; align-items: center; gap: 40px">
+        <div style="display: flex; flex-direction: column; text-align: center">
+          <h1>
+            <span id="welcome">welcome.</span>
+          </h1>
 
-        <div style="display: flex; gap: 40px; align-items: flex-start">
-          <div
-            style="display: flex; flex-direction: column; align-items: center"
-          >
-            <p
-              style="font-size: 30px; font-style: italic; font-weight: bold"
-              id="dateNow"
-            ></p>
-            <a href="desktop">desktop</a>
-            <a href="whatchacallitsname/">whatchacallitsname</a>
-          </div>
+          <p
+            style="
+              text-align: right;
+              font-size: 24px;
+              font-style: italic;
+              font-weight: bold;
+              width: fit-content;
+            "
+            id="timeNow"
+          ></p>
+          <br />
+          <div class="search-widget">
+            <form action="https://www.google.com/search" method="get">
+              <input type="text" name="q" placeholder="search something?..." />
 
-          <div
-            style="display: flex; flex-direction: column; align-items: center"
-          >
-            <p
-              style="font-size: 30px; font-style: italic; font-weight: bold"
-              id="timeNow"
-            ></p>
-            <a href="nighttime">nighttime</a>
-            <a href="credits">credits</a>
+              <!-- <button type="submit">Search</button> -->
+            </form>
           </div>
         </div>
-      </div>
 
-      <img src="assets/la_lua.png" style="height: 400px" />
+        <a href="nighttime/stars.html">
+          <img src="assets\la_lua.png" style="height: 400px" />
+        </a>
+      </div>
 
       <h2
         id="lastVisited"
         style="position: fixed; bottom: 10px; left: 10px; font-family: Arial"
       >
+        Last visited
         <span id="timeSince" style="font-style: italic"></span>
-        <br />
       </h2>
     </div>
+
+    <p
+      style="
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 150px;
+        height: 100%;
+        font-size: 30px;
+        text-align: right;
+        z-index: -1;
+        font-family: Wingdings;
+      "
+    >
+      GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO
+      TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO STARS GO TO
+      STARS GO TO STARS
+    </p>
   </body>
 </html>
